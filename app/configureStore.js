@@ -36,7 +36,6 @@ export default function configureStore(initialState = {}, history) {
     createReducer(),
     fromJS(initialState),
     composeEnhancers(...enhancers),
-    'window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()',
   );
 
   // Extensions

@@ -5,18 +5,25 @@
  */
 
 import React from 'react';
-import { Link } from "react-router-dom";
-// import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 
 function MenuItem(props) {
-  return <li>
-            <Link to={props.path}>
-              <i className={`fa fa-${props.icon}`}></i> <span>{props.label}</span>
-            </Link>
-        </li>
+  return (
+    <li>
+      <NavLink to={props.path}>
+        <i className={`fa fa-${props.icon}`} />
+        <span>{props.label}</span>
+      </NavLink>
+    </li>
+  );
 }
 
-MenuItem.propTypes = {};
+MenuItem.propTypes = {
+  path: PropTypes.string,
+  icon: PropTypes.string,
+  label: PropTypes.string,
+};
 
 export default MenuItem;
